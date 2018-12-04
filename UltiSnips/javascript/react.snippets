@@ -1,0 +1,59 @@
+extends javascript
+
+snippet react "Import React" b
+import React from 'react';
+${0}
+endsnippet
+
+snippet proptypes "Import PropTypes" b
+import PropTypes from 'prop-types';
+${0}
+endsnippet
+
+snippet reactsfc "React Stateless Functional Component" b
+export default function ${1:MyComponent}(${2:props}) {
+	return ${3:<div></div>};
+}
+${0}
+endsnippet
+
+snippet reactcomp "React Class Component" b
+export default class ${1:MyComponent} extends React.${2:Component} {
+	render() {
+		return ${3:<div></div>};
+	}
+}
+${0}
+endsnippet
+
+snippet reactsfc+proptypes "React Stateless Functional Component with PropTypes" b
+export default function ${1:MyComponent}(${2:props}) {
+	return ${3:<div></div>};
+}
+
+$1.propTypes = {
+	$4
+};
+
+$1.defaultProps = {
+	$5
+};
+${0}
+endsnippet
+
+snippet reactcomp+proptypes "React Class Component with PropTypes" b
+export default class ${1:MyComponent} extends React.${2:Component} {
+	static propTypes = {
+		$4
+	};
+
+	static defaultProps = {
+		$5
+	};
+
+	render() {
+		return ${3:<div></div>};
+	}
+}
+${0}
+endsnippet
